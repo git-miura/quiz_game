@@ -21,7 +21,7 @@ def game
       loop do
         guess = gets.chomp
 
-        case guess
+        case guess.downcase
           when question.answer
             puts <<~TEXT
               正解です！
@@ -54,13 +54,13 @@ def game
   puts <<~TEXT
   100点満点中「#{count_point}」点でした！
   もう一度遊びますか？
-  続ける場合はy、やめる場合はnを入力するか、エンターキーを押してください
+  続ける場合はy、やめる場合は他の文字を入力するか、エンターキーを押してください
   TEXT
     guess = gets.chomp
     if guess == "y"
       puts "------------------------------"
       game
-    else guess == "n"
+    else 
       puts "お疲れ様でした！"
     end
 
